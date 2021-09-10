@@ -1,5 +1,7 @@
 # JPush-React-Native
 
+Google Play 版 JPush-React-Native
+
 ## ChangeLog
 
 1. 从RN-JPush2.7.5开始，重新支持TypeScript
@@ -9,20 +11,15 @@
 ## 1. 安装
 
 ```
-npm install jpush-react-native --save
+npm install @heytea/jpush-react-native --save
 ```
 
 * 注意：如果项目里没有jcore-react-native，需要安装
 
-  ```
-  npm install jcore-react-native --save
-  ```
-安装完成后连接原生库
-进入到根目录执行<br/>
-react-native link<br/>
-或<br/>
-react-native link jpush-react-native<br/>
-react-native link jcore-react-native
+```
+npm install @heytea/jcore-react-native --save
+```
+
 
 ## 2. 配置
 
