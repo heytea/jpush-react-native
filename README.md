@@ -1,6 +1,6 @@
 # JPush-React-Native
 
-Google Play 版 JPush-React-Native
+Google Play 版 JPush-React-Native。注意以下安装路径与官方有些不同。
 
 ## ChangeLog
 
@@ -52,9 +52,9 @@ npm install @heytea/jcore-react-native --save
 
   ```
   include ':jpush-react-native'
-  project(':jpush-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jpush-react-native/android')
+  project(':jpush-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@heytea/jpush-react-native/android')
   include ':jcore-react-native'
-  project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jcore-react-native/android')
+  project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@heytea/jcore-react-native/android')
   ```
 
 * AndroidManifest.xml
@@ -89,8 +89,8 @@ pod install
 
   ```
   Add Files to "your project name"
-  node_modules/jcore-react-native/ios/RCTJCoreModule.xcodeproj
-  node_modules/jpush-react-native/ios/RCTJPushModule.xcodeproj
+  node_modules/@heytea/jcore-react-native/ios/RCTJCoreModule.xcodeproj
+  node_modules/@heytea/jpush-react-native/ios/RCTJPushModule.xcodeproj
   ```
 
 * Capabilities
@@ -103,8 +103,8 @@ pod install
 
   ```
   All --- Search Paths --- Header Search Paths --- +
-  $(SRCROOT)/../node_modules/jcore-react-native/ios/RCTJCoreModule/
-  $(SRCROOT)/../node_modules/jpush-react-native/ios/RCTJPushModule/
+  $(SRCROOT)/../node_modules/@heytea/jcore-react-native/ios/RCTJCoreModule/
+  $(SRCROOT)/../node_modules/@heytea/jpush-react-native/ios/RCTJPushModule/
   ```
 
 * Build Phases
