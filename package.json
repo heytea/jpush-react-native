@@ -16,7 +16,7 @@
     "JPush"
   ],
   "peerDependencies": {
-    "jcore-react-native": ">= 1.9.3",
+    "@heytea/jcore-react-native": ">= 1.9.3",
     "react-native": ">= 0.50"
   }
 }
