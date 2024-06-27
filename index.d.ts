@@ -56,11 +56,15 @@ export default class JPush {
 
   /**
    * 初始化推送服务
-   *
+   * {"appKey":"","channel":"dev","production":1}
    * 请在componentDidMount()调用init,否则会影响通知点击事件的回调
    *
    */
-  static init(): void;
+  static init(params: {
+    appKey: string;
+    titchannelle: string;
+    production: boolean;
+  }): void;
 
   /**
    * 获取 RegistrationID
@@ -121,6 +125,16 @@ export default class JPush {
    * 查询别名
    */
   static queryAlias(params: Sequence): void;
+
+   /**
+   * 进入页面
+   */
+  static pageEnterTo(params: String): void;
+
+  /**
+   * 离开页面
+   */
+  static pageLeave(params: String): void;
 
   //***************************************统计***************************************
 
@@ -284,7 +298,7 @@ export default class JPush {
   /**
    * 自定义消息事件
    */
-  static addCustomMessagegListener(
+  static addCustomMessageListener(
     callback: Callback<{
       /**
        * 唯一标识自定义消息的 ID
@@ -298,6 +312,42 @@ export default class JPush {
        * 对应 Portal 推送消息界面上的“可选设置”里的附加字段
        */
       extras: Extra;
+    }>
+  ): void;
+
+  /**
+   * inapp消息事件
+   */
+  static addInappMessageListener(
+    callback: Callback<{
+      /**
+       * 唯一标识inapp消息的 ID
+       */
+      mesageId: string;
+      /**
+       * 标题
+       */
+      title: string;
+      /**
+       * 内容
+       */
+      content: string;
+      /**
+       * 目标页面
+       */
+      target: string[];
+      /**
+       * 跳转地址
+       */
+      clickAction: string;
+      /**
+       * 附加字段
+       */
+      extras: Extra;
+      /**
+       * 类型，inappShow：展示，inappClick：点击
+       */
+      inappEventType: "inappShow" | "inappClick";
     }>
   ): void;
 
