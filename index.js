@@ -33,10 +33,11 @@ export default class JPush {
     * 请在componentDidMount()调用init，否则会影响通知点击事件的回调
     * */
     static init(params) {
-        if (Platform.OS == "android") {
+        if (Platform.OS === "android") {
             JPushModule.init()
         } else {
-            JPushModule.setupWithConfig(params)
+            // ios 在的初始化在海外App项目中
+            //JPushModule.setupWithConfig(params)
         }
     }
 
@@ -256,24 +257,24 @@ export default class JPush {
     }
 
 
-  
+
     /* 应用内消息，请配置pageEnterTo 和 pageLeave 方法，请配套使用
     * 进入页面，pageName:页面名 String
     * */
     static pageEnterTo(pageName) {
         if (Platform.OS == "android") {
-            
+
         } else {
             JPushModule.pageEnterTo(pageName)
         }
     }
 
     /* 应用内消息，请配置pageEnterTo 和 pageLeave 方法，请配套使用
-    * 离开页面，pageName:页面名 String 
+    * 离开页面，pageName:页面名 String
     * */
     static pageLeave(pageName) {
         if (Platform.OS == "android") {
-            
+
         } else {
             JPushModule.pageLeave(pageName)
         }
